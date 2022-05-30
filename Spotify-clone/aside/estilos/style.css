@@ -3,7 +3,6 @@
 
 :root {
   --primary-color: #1db954;
-  --secundary-color: #2941ab;
   --button-color: #222326;
   --uncontraste-color: #919496;
   font-size: 62.5%;
@@ -17,6 +16,7 @@
 body {
   background-color: #000000;
   color: white;
+  overflow: overlay;
 }
 a {
   text-decoration: none;
@@ -34,10 +34,10 @@ a svg {
 }
 
 .container {
-  max-width: 98vw;
-  margin: auto;
+  max-width:100vw;
 }
 header {
+  background-color: #000000;
   width: 100%;
   height: 8rem;
   display: flex;
@@ -46,6 +46,8 @@ header {
   justify-content: space-between;
   padding-inline: 5rem;
   align-items: center;
+  position: fixed;
+  z-index: 1;
 }
 .menu ul {
   display: flex;
@@ -58,21 +60,46 @@ header {
   width: 1px;
   background-color: white;
 }
-#open-menu{
-  display: none;
+body.menu-expanded{
+  overflow: hidden;
 }
-#open-menu li{
-  width: 2.5rem;
-  height: .2rem;
-  margin-block: .8rem;
+#hamburguer{
+  cursor: pointer;
+  position: absolute;
+  right: 5.6rem;
+  top: 1.7rem;
+  z-index: 10;
+}
+#hamburguer .line{
+  display: block;
+  width: 3.5rem;
+  height: .3rem;
+  margin-block: 1rem;
   background-color: white;
+  border-radius: 4px;
+  transition: transform 500ms, opacity 250ms;
 }
-#closed-menu{
+#hamburguer.active .line:nth-child(1){
+  transform: translateY(13px) rotate(45deg);
+}
+#hamburguer.active .line:nth-child(2){
+  opacity: 0;
+}
+#hamburguer.active .line:nth-child(3){
+  transform: translateY(-13px) rotate(-45deg)
+}
+#hamburguer{
   display: none;
 }
-#opened-menu{
-  display: flex;
+.opened-menu{
   position: fixed;
+  visibility: hidden;
+}
+body.menu-expanded  .opened-menu{
+  visibility: visible;
+  display: flex;
+  position:fixed;
+  z-index: 5;
   right: 0;
   left: 0;
   bottom: 0;
@@ -83,27 +110,34 @@ header {
   justify-content: flex-end;
 }
 .menu-mobile{
+  transform: translateX(100%);
+  visibility: hidden;
+}
+body.menu-expanded .menu-mobile{
+  visibility: visible;
+  display: flex;
   height: 100vh;
   width: 50vw;
   top: 0;
   bottom: 0;
   background-color: #000000;
   padding: 4rem;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 300ms;
+  transform: translateX(0);
 }
-.menu-mobile li:nth-child(1), .menu-mobile li:nth-child(2),.menu-mobile li:nth-child(3){
-  font-size: 3.6rem;
+.menu-mobile li:nth-child(1), .menu-mobile li:nth-child(2), .menu-mobile li:nth-child(3){
+  font-size: 3rem;
   font-weight: 700;
 }
 .menu-mobile li:nth-child(4){
-  width: 40%;
+  width: 17rem;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.589);
 }
 .menu-mobile li:nth-child(5), .menu-mobile li:nth-child(6){
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 400;
 }
 .menu-mobile ul{
@@ -111,9 +145,10 @@ header {
   display: flex;
   flex-direction: column;
   gap: 5vh;
+  margin-top: 8vh;
 }
 main {
-  height: calc(100vh - 8rem);
+  height: calc(100vh);
   background-image: url(https://images.pexels.com/photos/783243/pexels-photo-783243.jpeg);
   background-size: cover;
   background-position: center center;
@@ -122,15 +157,20 @@ main {
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 .main-text {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #0000006e;
-  padding: 0.5rem;
-  border-radius: 1rem;
+  padding: .5rem;
+  background: rgba(0, 0, 0, 0.26);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.2px);
+  -webkit-backdrop-filter: blur(2.2px);
+  border: 1px solid rgba(0, 0, 0, 0.19);
   margin-bottom: 3rem;
   margin-inline: 1rem;
 }
@@ -147,7 +187,7 @@ main p {
   text-align: center;
   color: #ffffff;
 }
-a > .button,
+
 .button {
   display: block;
   font-size: 1.4rem;
@@ -156,7 +196,7 @@ a > .button,
   padding: 1.4rem 3.2rem;
   background-color: var(--primary-color);
   border-radius: 3rem;
-  margin-bottom: 7%;
+  margin-bottom: 10vh;
   transition: transform 300ms;
   
 }
@@ -217,7 +257,7 @@ footer .linha-1 {
   border-radius: 50%;
   background-color: var(--button-color);
   padding: 1rem;
-  transition: tranform 500ms;
+  transition: transform 300ms;
  align-self: flex-start;
 }
 .social-button:hover{
@@ -250,11 +290,10 @@ footer .linha-1 {
 }
 
 @media (max-width:768px){
-  
   .menu{
     display: none;
   }
-  #open-menu{
+  #hamburguer{
     display: block;
   }
 
@@ -269,18 +308,19 @@ footer .linha-1 {
   }
 }
 @media (max-width:500px){
-  .menu-mobile{
+  body.menu-expanded .menu-mobile{
     width: 100vw;
     align-items: center;
   }
-  .menu-mobile ul{
+  body.menu-expanded .menu-mobile ul{
     align-items: center;
   }
   main h1{
-    font-size:3rem;
+    font-size:3.6rem;
   }
   main  p{
     font-size: 1.4rem;
+    max-width: 85%;
   }
   footer .linha-1{
     flex-direction: column;
@@ -290,6 +330,11 @@ footer .linha-1 {
   }
   footer .linha-2, footer .linha-2 ul{
     flex-direction: column;
+    margin-inline: 0;
+  }
+  footer .linha-2 ul li{
+    align-self: flex-start;
+    margin-inline: 0 ;
   }
 
 }
