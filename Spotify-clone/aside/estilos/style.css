@@ -13,6 +13,7 @@
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
+/*Geral*/
 body {
   background-color: #000000;
   color: white;
@@ -32,10 +33,12 @@ a svg {
   height: 4rem;
   fill: white;
 }
-
 .container {
   max-width:100vw;
 }
+
+
+/*Header*/
 header {
   background-color: #000000;
   width: 100%;
@@ -49,6 +52,8 @@ header {
   position: fixed;
   z-index: 1;
 }
+
+/*Menu-Desktop*/
 .menu ul {
   display: flex;
   justify-content: space-around;
@@ -60,9 +65,8 @@ header {
   width: 1px;
   background-color: white;
 }
-body.menu-expanded{
-  overflow: hidden;
-}
+
+/*Menu-mobile*/
 #hamburguer{
   cursor: pointer;
   position: absolute;
@@ -88,14 +92,20 @@ body.menu-expanded{
 #hamburguer.active .line:nth-child(3){
   transform: translateY(-13px) rotate(-45deg)
 }
-#hamburguer{
+body #hamburguer{
   display: none;
 }
-.opened-menu{
+body.menu-expanded #hamburguer{
+  display: block;
+}
+body.menu-expanded{
+  overflow: hidden;
+}
+.background-menu-mobile{
   position: fixed;
   visibility: hidden;
 }
-body.menu-expanded  .opened-menu{
+body.menu-expanded  .background-menu-mobile{
   visibility: visible;
   display: flex;
   position:fixed;
@@ -147,6 +157,8 @@ body.menu-expanded .menu-mobile{
   gap: 5vh;
   margin-top: 8vh;
 }
+
+/*Foto e texto principal*/
 main {
   height: calc(100vh);
   background-image: url(https://images.pexels.com/photos/783243/pexels-photo-783243.jpeg);
@@ -179,6 +191,7 @@ main h1 {
   color: #ffffff;
   margin-bottom: 2rem;
   text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.438);
 }
 main p {
   font-size: 1.8rem;
@@ -186,6 +199,7 @@ main p {
   max-width: 50rem;
   text-align: center;
   color: #ffffff;
+  text-shadow: 1px 1px 6px black;
 }
 
 .button {
@@ -205,6 +219,8 @@ main p {
   cursor: pointer;
   color: unset;
 }
+
+/*Rodapé e redes sociais*/
 footer {
   min-height:60vh;
   display: flex;
@@ -220,7 +236,7 @@ footer .linha-1 {
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
-.footer-topic {
+.linha-1 .footer-topic {
   flex: 1 1 165px;
   display: flex;
   flex-direction: column;
@@ -228,30 +244,30 @@ footer .linha-1 {
   margin-inline: auto;
 
 }
-.footer-logo{
+.linha-1 .footer-logo{
   padding-block: 3rem;
 }
-.footer-topic h3 {
+.linha-1 .footer-topic h3 {
   padding-block: 2rem;
   font-size: 1.4rem;
   color: var(--uncontraste-color);
   text-transform: uppercase;
   text-align: start;
 }
-.footer-topic ul li {
+.linha-1 .footer-topic ul li {
   font-size: 1.6rem;
   padding-bottom: 1.5rem;
   line-height: 1.5;
   font-weight: 400;
 }
-.social-media {
+.linha-1 .social-media {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 1rem;
   padding-block: 3rem;
 }
-.social-button {
+.linha-1 .social-button {
   width: 5.4rem;
   height: 5.4rem;
   border-radius: 50%;
@@ -260,7 +276,7 @@ footer .linha-1 {
   transition: transform 300ms;
  align-self: flex-start;
 }
-.social-button:hover{
+.linha-1 .social-button:hover{
   transform: scale(1.2);
   background-color: var(--primary-color);
 }
@@ -279,7 +295,7 @@ footer .linha-1 {
   margin-block: 1rem;
   margin-inline: auto;
 }
-.linha-2 ul li,
+.linha-2 ul li, .linha-2
 .site-copy {
   display: flex;
   align-self: center;
@@ -293,7 +309,7 @@ footer .linha-1 {
   .menu{
     display: none;
   }
-  #hamburguer{
+  body #hamburguer{
     display: block;
   }
 

@@ -1,16 +1,7 @@
-
-const menuIsExpanded = () =>{
+//Abre e fecha o menu mobile e altera o formato do ícone de menu
+//Adicionadod aos links do menu, para ao serem clicados, fechar o menu
+const openCloseMenu = () => {
   document.body.classList.toggle('menu-expanded')
-}
-const menuIsActive = () =>{
   hamburguer.classList.toggle('active')
 }
-const openCloseMenu = () =>{
-  menuIsActive()
-  menuIsExpanded()
-}
-  hamburguer.addEventListener('click',openCloseMenu)
-
-function closeMenu(){
-  document.body.classList.remove('menu-expanded')
-}
+hamburguer.addEventListener('click', openCloseMenu)
