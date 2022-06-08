@@ -1,4 +1,4 @@
-  var input = `0.02`
+  var input = `312.88`
 var lines = input.split('\n');
 let saque = parseFloat(lines.shift());
 
@@ -61,7 +61,7 @@ if(Math.floor(saque / 20) >= 0){
   }
   if((saque.toPrecision(1)/0.01) >=0){
       moedas01 = Math.floor(saque.toPrecision(1)/ 0.01);
-      saque = (saque.toPrecision(1)) % 0.01;
+      saque = Math.floor((saque.toPrecision(1)) % 0.01);
   }
 
 console.log(`NOTAS:
@@ -78,4 +78,3 @@ ${moedas25} moeda(s) de R$ 0.25
 ${moedas10} moeda(s) de R$ 0.10
 ${moedas5} moeda(s) de R$ 0.05
 ${moedas01} moeda(s) de R$ 0.01`)
-console.log(saque)
