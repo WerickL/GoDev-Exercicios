@@ -10,5 +10,6 @@ let x1 = parseFloat(p1.shift())
 let y1 = parseFloat(p1.shift())
 let x2 = parseFloat(p2.shift())
 let y2 = parseFloat(p2.shift())
+
 let distancia = Math.sqrt(((x2 - x1)**2)+((y2 - y1)**2)).toFixed(4)
 console.log(distancia);
