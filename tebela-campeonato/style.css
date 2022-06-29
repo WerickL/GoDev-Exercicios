@@ -1,0 +1,50 @@
+:root{
+    --libertadores:#003366;
+    --pre-libertadores:#1398BE;
+    --sul-americana:#DE9800;
+    --cinza-neutro:#CCCCCC;
+    --vermelho:#C91B04;
+    --titulo-coluna:#999999;
+    --texto:#666666;
+    --legenda:#8F8F8F;
+    --legenda-sigla: #555555;
+    --fundo-zebrado:#f7f7f7;
+    --bordas:#DDDDDD;
+}
+*{
+    font-family: Arial, Helvetica , sans-serif;
+}
+table, tr{
+    width: 95vw;
+    border: 1px solid var(--bordas);
+    border-collapse: collapse;
+}
+td{
+    width: auto ;
+    text-align: center ;
+    font-size: 14px;
+    color: var(--texto);
+    border: 1px solid var(--bordas);
+    
+}
+td:not(td.porcentagem), td:not(td.nome-time){
+    width:10px;
+}
+thead td{
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--titulo-coluna);
+}
+td.nome-time{
+    text-align: left;
+    font-size: 14px;
+    color: var(--texto);
+    width: auto;
+}
+td.posicao{
+    font-size: 18px; 
+    font-weight: 700;
+}
+td.porcentagem{
+    text-align: center;
+}
