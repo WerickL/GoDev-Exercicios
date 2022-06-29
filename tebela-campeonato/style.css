@@ -1,3 +1,5 @@
+@charset "utf-8";
+/*GLOBAL*/
 :root{
     --libertadores:#003366;
     --pre-libertadores:#1398BE;
@@ -8,43 +10,137 @@
     --texto:#666666;
     --legenda:#8F8F8F;
     --legenda-sigla: #555555;
-    --fundo-zebrado:#f7f7f7;
-    --bordas:#DDDDDD;
+    --fundo-zebrado:#F7F7F7;
+    --bordas:#DDDDDD;   
 }
 *{
     font-family: Arial, Helvetica , sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
 }
+/*GERAL*/
 table, tr{
-    width: 95vw;
+    width: 700px;
     border: 1px solid var(--bordas);
     border-collapse: collapse;
+    margin: auto;
+    line-height: 1.5;
 }
-td{
-    width: auto ;
-    text-align: center ;
+table{
+    position: relative;
+}
+td, th{
+    text-align: center;
     font-size: 14px;
-    color: var(--texto);
-    border: 1px solid var(--bordas);
-    
+    color: var(--texto); 
 }
-td:not(td.porcentagem), td:not(td.nome-time){
-    width:10px;
-}
-thead td{
+th{
     font-size: 13px;
     font-weight: 700;
     color: var(--titulo-coluna);
+    width: 40px;
 }
-td.nome-time{
-    text-align: left;
-    font-size: 14px;
-    color: var(--texto);
-    width: auto;
+
+/*ESPECIFÍFICOS*/
+thead tr{
+    position: sticky;
+    top: -1px;
+    background-color: white;
 }
 td.posicao{
     font-size: 18px; 
     font-weight: 700;
 }
-td.porcentagem{
-    text-align: center;
+td.nome-time, th.nome-time{
+    text-align: left;
+    color: var(--texto);
+    font-weight: 700;
+    width: auto;
+}
+td.pontos{
+    font-weight: 700;
+    color: black;
+}
+th.porcentagem{
+    width: auto;
+}
+tr.libertadores td.posicao{
+    color: var(--libertadores);
+}
+tr.pre-libertadores td.posicao{
+    color: var(--pre-libertadores);
+}
+tr.sul-americana td.posicao{
+    color: var(--sul-americana);
+}
+tr.rebaixado td.posicao{
+    color: var(--vermelho);
+}
+tr:nth-child(4), tr:nth-child(16){
+    border-bottom: 2px solid var(--cinza-neutro);
+}
+td:nth-child(odd):not(td:nth-child(1)), th:nth-child(odd):not(th:nth-child(1)){
+    background-color: var(--fundo-zebrado);
+}
+
+/*LEGENDAS*/
+tfoot tr{
+    border: none;
+}
+tfoot td{
+    font-size: 10px;    
+    text-align: left;
+}
+tfoot tr div{
+    display: flex;
+    align-items: center;
+    padding-inline: 5px;
+    flex-wrap: wrap;
+}
+/*CORES POSICIONAMENTO*/
+tr.position-description td{
+    padding-top: 5px;
+}
+tfoot tr.position-description td span{
+    color: var(--legenda);
+    display: flex;
+    align-items: center;
+    margin-right: 3%;
+}
+tr.position-description td span::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 20%;
+    margin-inline: 5px;  
+}
+tr.position-description span:nth-child(1)::before{
+    background-color: var(--libertadores);
+}
+tr.position-description span:nth-child(2)::before{
+    background-color: var(--pre-libertadores);
+}
+tr.position-description span:nth-child(3)::before{
+    background-color: var(--sul-americana);
+}
+tr.position-description span:nth-child(4)::before{
+    background-color: var(--vermelho);
+}
+
+/*SIGLAS DADOS*/
+tr.data-description td{
+    color: var(--legenda-sigla);
+    padding-bottom: 5px;
+}
+tr.data-description td span{
+    margin-inline: 1%;
+}
+
+/*RESPONSIVIDADE*/
+@media (max-width:700px){
+    table{
+        max-width: 90vw;
+    }
 }
