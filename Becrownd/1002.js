@@ -1,5 +1,5 @@
-input = "2.00"
-
+let input = "2.00"
+let lines = input.split("\n")
 let π = 3.14159
 let raio = parseFloat(lines).toFixed(2)
 let a = parseFloat(raio**2 * π)

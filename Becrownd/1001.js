@@ -1,4 +1,5 @@
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var input = `5
+9`
 var lines = input.split('\n');
 let A = parseInt(lines.shift())
 let B = parseInt(lines.shift())
