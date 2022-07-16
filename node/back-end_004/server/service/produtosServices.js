@@ -5,5 +5,9 @@ exports.getProdutosById = function(id) {
 }
 
 exports.updateDescription = function(id, description){
-  return 
+  return produtosData.updateDescription(id, description);
+}
+
+exports.insertProduto = function(descricao, preco, tipo){
+  return produtosData.insertProduto(descricao, preco, tipo);
 }
