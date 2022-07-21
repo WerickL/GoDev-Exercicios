@@ -1,0 +1,81 @@
+@charset "utf-8";
+:root{
+  --primaryColor: #1c1c1c;
+  --secundaryColor: #D6685A;
+  --whiteColor:#EFF3F8;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+}
+body, html{
+  font-family:  'Montserrat', Tahoma, sans-serif;
+  width: 100vw;
+  height: 100vh;
+}
+main{
+  overflow: hidden;
+}
+.sacola {
+  display: none;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000006b;
+  justify-content: end;
+}
+.sacola.visivel{
+  display: flex;
+}
+
+.areaSacola{
+  width: min(85%, 375px);
+  background-color: var(--whiteColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.areaSacola h3{
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-weight: 500;
+}
+.areaSacola h3::after{
+  content: "";
+  height: 1px;
+  width: 100%; 
+  background-color: #1c1c1c66;
+  display: block;
+  margin-top: 2px;
+}
+.conteudoSacolaVazia{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.sacolaIcone{
+  width: 70px;
+  color: var(--secundaryColor);
+}
+button.voltaCompras{
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-weight: 300;
+}
+.sacola.vazia .conteudoSacolaVazia{
+  display: flex;
+}
