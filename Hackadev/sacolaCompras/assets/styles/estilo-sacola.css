@@ -4,18 +4,19 @@
   --secundaryColor: #D6685A;
   --whiteColor:#EFF3F8;
   --borderColor: #6d768a4d;
-  --larguraSacola:375px;
-  --areaCabecalhoSacola:50px;
-  --areaFinalizarCompra:80px;
+  --buttonColor:#6d768aba;
+  --larguraSacola:min(100%, 400px);
+  --areaCabecalhoSacola:45px;
+  --alturaFinalizarCompra:45px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 body, html{
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Roboto', sans-serif;
   width: 100vw;
   height: 100vh;
 }
@@ -41,7 +42,7 @@ body, html{
   align-items: center;
   flex-direction: column;
   overflow: overlay;
-  padding-bottom: var(--areaFinalizarCompra);
+  padding-bottom: var(--alturaFinalizarCompra);
   padding-top: var(--areaCabecalhoSacola);
   position: relative;
 }
@@ -54,7 +55,7 @@ body, html{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:0px 15px;
+  padding:0px 25px;
   position: fixed;
   top:0;
   background-color: var(--whiteColor);
@@ -102,17 +103,40 @@ button.voltaCompras{
 /*Sacola com produtos*/
 .finalizarCompra{
   width: var(--larguraSacola);
-  height: var(--areaFinalizarCompra);
+  height: var(--alturaFinalizarCompra);
   background-color: var(--whiteColor);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.areaValorParcial{
+  width: 120px;
+  height: 30px;
+  background-color: var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 10px;
+  margin: auto;
+}
+#valor {
+  line-height: 1.5;
+  padding-inline: 5%;
+  font-size: 15px;
+  font-weight: 700;
 }
 #botaoFinalizarCompra{
   width: 50%;
-  height: 40px;
+  height: 100%;
+  align-self: flex-end;
+  border: none;
+  border-radius: 10px 0 0 0;
+  background-color: var(--secundaryColor);
+  color: var(--whiteColor);
+  font-size: 15px;
+  font-weight: 500;
 }
 .conteudoSacola{
   width: 90%;
@@ -124,6 +148,7 @@ button.voltaCompras{
   border: 1px solid var(--borderColor);
   border-radius: 5px;
   margin-block: 5px;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.203);
 }
 .imagemProduto{
   border-radius: 3px 0 0 3px;
@@ -215,7 +240,7 @@ span.corProduto{
   flex: 1;
   height: 30px;
   background-color: var(--whiteColor);
-  border: 1px solid #6d768aba;
+  border: 1px solid var(--buttonColor);
   font-size: 13px;
   border-radius: 3px;
 }
