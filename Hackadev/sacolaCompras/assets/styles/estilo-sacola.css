@@ -112,18 +112,13 @@ button.voltaCompras{
   justify-content: space-between;
 }
 .areaValorParcial{
-  width: 120px;
-  height: 30px;
-  background-color: var(--borderColor);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0px 10px;
   margin: auto;
 }
 #valor {
   line-height: 1.5;
-  padding-inline: 5%;
   font-size: 15px;
   font-weight: 700;
 }
@@ -157,7 +152,7 @@ button.voltaCompras{
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 12px;
   
 }
 #nomeProduto{
@@ -166,9 +161,9 @@ button.voltaCompras{
 .infoProdutos{
   display: grid;
   grid-template-areas: "A B" "C D";
-  gap: 15%;
+  gap: 20%;
   flex: 1;
-  padding-block: 5px;
+  padding-block: 10px;
   color: #6d768ad2;
 }
 .tamanhoPeca{
@@ -190,7 +185,7 @@ span.corProduto{
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: aqua;
+  background-color: var(--secundaryColor);
   border: 1px solid var(--borderColor);
 }
 #botoesQuantidade{
