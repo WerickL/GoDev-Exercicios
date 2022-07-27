@@ -15,11 +15,11 @@
   margin: 0;
   box-sizing: border-box;
 }
-body, html{
+body{
   font-family: 'Roboto', sans-serif;
   width: 100vw;
   height: 100vh;
-  overflow: scroll;
+  overflow: overlay;
 }
 body.fixed {
   overflow: hidden;
@@ -31,12 +31,15 @@ button{
   cursor: pointer;
 }
 #sacola {
+  position: fixed;
+  top: 0;
   display: none;
   width: 100vw;
   height: 100vh;
   background-color: #0000006b;
   justify-content: end;
   font-size: 14px;
+  padding: 0;
 }
 #sacola.visivel{
   display: flex;
@@ -44,6 +47,7 @@ button{
 
  .areaSacola{
   width:var(--larguraSacola) ;
+  height: 100vh;
   background-color: var(--whiteColor);
   display: flex;
   align-items: center;
@@ -51,7 +55,6 @@ button{
   overflow: overlay;
   padding-bottom: var(--alturaFinalizarCompra);
   padding-top: var(--areaCabecalhoSacola);
-  position: relative;
 }
 #sacola.vazia .areaSacola{
   justify-content: center;

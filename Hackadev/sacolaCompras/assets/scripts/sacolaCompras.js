@@ -1,5 +1,5 @@
 //elementos
-const botaoAbrirSacola = document.getElementById('nomeDoID')
+const botaoAbrirSacola = document.getElementById('abrirSacola')
 
 const body = document.body
 
