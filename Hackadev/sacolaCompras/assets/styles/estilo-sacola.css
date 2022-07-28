@@ -147,7 +147,8 @@ button#voltarCompras{
 }
 #nomeProduto{
   font-size: 16px;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.226);
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(36, 36, 36, 0.177);
 }
 .infoProdutos{
   display: grid;
@@ -252,9 +253,15 @@ span.corProduto{
   font-weight: 700;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.226);
 }
+.finalizarCompra a{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
 #botaoFinalizarCompra{
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: var(--alturaFinalizarCompra);
   align-self: flex-end;
   border: none;
   border-radius: 10px 0 0 0;
@@ -263,13 +270,10 @@ span.corProduto{
   font-size: 15px;
   font-weight: 500;
 }
-
 @media(min-width:400px){
   #botaoFinalizarCompra{
     width: 160px;
     height: 40px;
     border-radius: 5px;
-    margin: auto;
-
   }
 }
