@@ -1,7 +1,7 @@
 @charset "utf-8";
 :root{
-  --primaryColor: #1c1c1c;
-  --secundaryColor: #D6685A;
+  --corPrimaria: #D6685A;
+  --corSecundaria: #1c1c1c;
   --whiteColor:#EFF3F8;
   --borderColor: #6d768a4d;
   --buttonColor:#6d768aba;
@@ -36,7 +36,7 @@ button{
   display: none;
   width: 100vw;
   height: 100vh;
-  background-color: #0000006b;
+  background-color: #0000007b;
   justify-content: end;
   font-size: 14px;
   padding: 0;
@@ -102,10 +102,10 @@ button{
 }
 .sacolaIcone{
   width: 85px;
-  color: var(--primaryColor);
+  color: var(--corSecundaria);
 }
 button#voltarCompras{
-  background-color: var(--primaryColor);
+  background-color: var(--corSecundaria);
   color: var(--whiteColor);
   padding: 10px;
   border: none;
@@ -176,7 +176,7 @@ span.corProduto{
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: var(--secundaryColor);
+  background-color: var(--corPrimaria);
   border: 1px solid var(--borderColor);
 }
 #botoesQuantidade{
@@ -192,8 +192,8 @@ span.corProduto{
   align-self: center;
   font-size: 18px;
   border-radius: 50%;
-  border: 1px solid var(--primaryColor);
-  color: var(--primaryColor);
+  border: 1px solid var(--corSecundaria);
+  color: var(--corSecundaria);
 }
 #botaoQuantidade svg{
   width: 10px;
@@ -207,13 +207,13 @@ span.corProduto{
   padding-inline: 10px;
   text-align: center;
   align-self: center;
-  color: var(--primaryColor);
+  color: var(--corSecundaria);
   font-weight: 500;
 }
 #precoUnitario{
   grid-area: D;
   align-self: center;
-  color: var(--secundaryColor);
+  color: var(--corPrimaria);
   font-weight: 700;
   line-height: 1.5;
 }
@@ -238,13 +238,12 @@ span.corProduto{
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .areaValorParcial{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
   width: 50%;
 }
 #valor {
@@ -259,7 +258,7 @@ span.corProduto{
   align-self: flex-end;
   border: none;
   border-radius: 10px 0 0 0;
-  background-color: var(--secundaryColor);
+  background-color: var(--corPrimaria);
   color: var(--whiteColor);
   font-size: 15px;
   font-weight: 500;
